@@ -19,3 +19,15 @@
                                     aria-hidden="true">&times;</span></button>
                     </div>
                     <% } %>
+
+                        <% if (message !='' || messageIntro !='' ) { %>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert"
+                                style="text-align: center; width: auto;">
+                                <strong>
+                                    <%= messageIntro %>
+                                        <%= message %>
+                                </strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span
+                                        aria-hidden="true">&times;</span></button>
+                            </div>
+                            <% } %>
