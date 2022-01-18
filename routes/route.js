@@ -6,7 +6,8 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const bcrypt = require('bcrypt');
 const joi = require('joi');
-
+const { genericFlash, conditionalFlash } = require('../middleware/flash');
+const { signFlash } = require('../middleware/flash');
 
 router.use(session({
     secret: 'secret',
@@ -18,7 +19,8 @@ router.use(flash());
 
 router.use((req, res, next) => {
     res.locals.success = req.flash('success');
-    res.locals.error = req.flash('error');
+    res.locals.messageIntro = req.flash('messageIntro');
+    res.locals.message = req.flash('message');
     next()
 })
 
@@ -42,19 +44,22 @@ router.post('/login', async (req, res) => {
     const value = schema.validate(req.body);
     debug(value)
     if (value.error) {
+        const msg = conditionalFlash(value.error.message)
         //req.session.message = conditionalFlash(value.error.message)
-        res.redirect('/login')
+        req.flash('messageIntro', msg.intro);
+        req.flash('message', msg.message);
+        //res.redirect('/login')
     }
     let valid;
     let user = await User.User.findOne({ email: req.body.email })
     if (!user) {
-        req.session.message = genericFlash(2);
+        //req.session.message = genericFlash(2);
         res.status(400).redirect('/login');
     }
 
     else { valid = await bcrypt.compare(req.body.password, user.password); }
     if (!valid) {
-        req.session.message = genericFlash(2);
+        //req.session.message = genericFlash(2);
         res.redirect('/login')
     }
     else {
