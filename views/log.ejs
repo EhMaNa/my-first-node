@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Log In</title>
+    <link rel="stylesheet" href="/folder/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/folder/assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="/folder/assets/css/Login-Form-Dark.css">
+</head>
+
+<body>
+    <div class="login-dark">
+        <form method="post">
+            <%- include ('partials/messages.ejs') %>
+                <h1 class="text-center"><strong>LOG IN</strong></h1>
+                <h2 class="sr-only" style="color:rgb(238, 231, 231)">Login Form</h2>
+                <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+                <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"
+                        value="<%= typeof name != 'undefined' ? name : '' %>">
+                </div>
+                <div class="form-group"><input class="form-control" type="password" name="password"
+                        placeholder="Password" value="<%= typeof password != 'undefined' ? password : '' %>">
+                </div>
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log
+                        In</button></div><a href="#" class="forgot">Forgot your email or password?</a>
+        </form>
+    </div>
+    <script src="/folder/assets/js/jquery.min.js"></script>
+    <script src="/folder/assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
