@@ -23,6 +23,8 @@
     "helmet": "^5.0.1",
     "joi": "^17.5.0",
     "mongoose": "^6.1.7",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
     "winston": "^3.4.0"
   },
   "devDependencies": {
