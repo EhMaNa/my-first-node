@@ -21,6 +21,7 @@ router.use((req, res, next) => {
     res.locals.success = req.flash('success');
     res.locals.messageIntro = req.flash('messageIntro');
     res.locals.message = req.flash('message');
+    delete req.flash();
     next()
 })
 
@@ -44,8 +45,7 @@ router.post('/login', async (req, res) => {
     const value = schema.validate(req.body);
     debug(value)
     if (value.error) {
-        const msg = conditionalFlash(value.error.message)
-        //req.session.message = conditionalFlash(value.error.message)
+        const msg = genericFlash(2);
         req.flash('messageIntro', msg.intro);
         req.flash('message', msg.message);
         //res.redirect('/login')
@@ -54,10 +54,14 @@ router.post('/login', async (req, res) => {
     let user = await User.User.findOne({ email: req.body.email })
     if (!user) {
         //req.session.message = genericFlash(2);
+        const msg = genericFlash(2);
+        req.flash('messageIntro', msg.intro);
+        req.flash('message', msg.message);
         res.status(400).redirect('/login');
     }
 
     else { valid = await bcrypt.compare(req.body.password, user.password); }
+
     if (!valid) {
         //req.session.message = genericFlash(2);
         res.redirect('/login')
