@@ -53,7 +53,7 @@ function genericFlash(value) {
         case 2:
             return {
                 type: "danger",
-                intro: "Invalid Email or Password",
+                intro: "Invalid Email or Password!",
                 message: "Please Try Again"
             }
         case 3:
