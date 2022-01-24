@@ -11,7 +11,8 @@ const { signFlash } = require('../middleware/flash-messages');
 const { ensureAuthenticated } = require('../middleware/auth');
 const passport = require('passport');
 require('../middleware/passport')(passport);
-
+const reqFlashInit = require('../middleware/req-flash-init');
+const reqFlash = require('../middleware/req-flash');
 
 router.use(session({
     secret: 'secret',
@@ -22,17 +23,7 @@ router.use(session({
 router.use(passport.initialize());
 router.use(passport.session());
 router.use(flash());
-
-router.use((req, res, next) => {
-    res.locals.success = req.flash('success');
-    res.locals.error = req.flash('error');
-    res.locals.errors = req.flash('errors');
-    res.locals.errorsIntro = req.flash('errorsIntro');
-    res.locals.messageIntro = req.flash('messageIntro');
-    res.locals.message = req.flash('message');
-    delete req.flash();
-    next()
-})
+router.use(reqFlashInit)
 
 //  GET ROUTES
 router.get('/signup', (rq, rs) => {
@@ -66,9 +57,7 @@ router.post('/login', async (req, res, next) => {
     const value = schema.validate(req.body);
     debug(value)
     if (value.error) {
-        const msg = genericFlash(2);
-        req.flash('messageIntro', msg.intro);
-        req.flash('message', msg.message);
+        reqFlash(req, genericFlash(2), 'messageIntro', 'message');
         res.redirect('/login')
     } else {
         passport.authenticate('local', {
@@ -93,15 +82,11 @@ router.post('/signup', async (req, res) => {
     const value = schema.validate(req.body);
     debug(value)
     if (value.error) {
-        const msg = conditionalFlash(value.error.message);
-        req.flash('errorsIntro', msg.intro);
-        req.flash('errors', msg.message);
+        reqFlash(req, conditionalFlash(value.error.message), 'errorsIntro', 'errors');
         res.status(400).redirect('/signup');
     }
     else if (req.body.password != req.body.password_repeat) {
-        const msg = genericFlash(4);
-        req.flash('messageIntro', msg.intro);
-        req.flash('message', msg.message);
+        reqFlash(req, genericFlash(4), 'messageIntro', 'message');
         res.status(400).redirect('/signup');
     }
     else {
@@ -120,9 +105,7 @@ router.post('/signup', async (req, res) => {
             res.redirect(302, '/login');
             res.end();
         } catch (error) {
-            const msg = signFlash(error.message);
-            req.flash('errorsIntro', msg.intro);
-            req.flash('errors', msg.message);
+            reqFlash(req, signFlash(error.message), 'errorsIntro', 'errors');
             res.redirect(302, '/signup')
         }
 
