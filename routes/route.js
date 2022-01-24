@@ -1,7 +1,6 @@
 const User = require('../schemas/signup');
 const express = require('express');
 const router = express.Router();
-const app = express();
 const debug = require('debug')('node:app');
 const session = require('express-session');
 const flash = require('connect-flash');
@@ -16,12 +15,12 @@ require('../middleware/passport')(passport);
 
 router.use(session({
     secret: 'secret',
-    cookie: { maxAge: 1000 },
-    resave: false,
-    saveUninitialized: false,
+    cookie: { maxAge: null },
+    resave: true,
+    saveUninitialized: true,
 }));
-app.use(passport.initialize());
-app.use(passport.session());
+router.use(passport.initialize());
+router.use(passport.session());
 router.use(flash());
 
 router.use((req, res, next) => {
@@ -46,15 +45,7 @@ router.get('/home', (rq, rs) => {
 router.get('/', (rq, rs) => {
     rs.render('index');
 });
-router.get('/try', function (req, res, next) {
-    if (req.isAuthenticated) {
-        debug(req.isAuthenticated)
-        return next()
-    }
-    debug(req.isAuthenticated)
-    res.redirect(301, '/login')
-
-}, (rq, rs) => {
+router.get('/users/home', ensureAuthenticated, (rq, rs) => {
     rs.send('index');
 });
 router.get('/logout', (rq, rs) => {
@@ -96,7 +87,7 @@ router.post('/login', async (req, res, next) => {
     }*/
     else {
         passport.authenticate('local', {
-            successRedirect: '/try',
+            successRedirect: '/users/home',
             failureRedirect: '/login',
             failureFlash: true,
         })(req, res, next);
