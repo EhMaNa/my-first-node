@@ -32,14 +32,17 @@ router.get('/signup', (rq, rs) => {
 router.get('/login', (rq, rs) => {
     rs.render('log',);
 });
-router.get('/home', (rq, rs) => {
-    rs.render('index');
-});
 router.get('/', (rq, rs) => {
     rs.render('index');
 });
-router.get('/users/home', ensureAuthenticated, (rq, rs) => {
-    rs.send('index');
+router.get('/home/dashboard', ensureAuthenticated, (rq, rs) => {
+    rs.render('dashboard');
+});
+router.get('/home/user', (rq, rs) => {
+    rs.render('user');
+});
+router.get('/home/products', (rq, rs) => {
+    rs.render('index');
 });
 router.get('/logout', (rq, rs) => {
     rq.logout();
@@ -61,7 +64,7 @@ router.post('/login', async (req, res, next) => {
         res.redirect('/login')
     } else {
         passport.authenticate('local', {
-            successRedirect: '/users/home',
+            successRedirect: '/home/dashboard',
             failureRedirect: '/login',
             failureFlash: true,
         })(req, res, next);
