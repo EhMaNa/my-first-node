@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/folder/asset/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Products</title>
+    <link rel="stylesheet" href="/folder/assets/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="/folder/assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="/folder/assets/css/smoothproducts.css">
+    <link href="/folder/assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-image="/folder/asset/img/sidebar-5.jpg">
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a class="simple-text">
+                        VIRTUAL REALITY
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li>
+                        <a class="nav-link" href="./dashboard">
+                            <i class="nc-icon nc-chart-pie-35"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./user">
+                            <i class="nc-icon nc-circle-09"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./products">
+                            <i class="nc-icon nc-atom"></i>
+                            <p>Products</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+                <div class="container-fluid">
+                    <a class="navbar-brand"> Products </a>
+                    <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                        aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar burger-lines"></span>
+                        <span class="navbar-toggler-bar burger-lines"></span>
+                        <span class="navbar-toggler-bar burger-lines"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                    </div>
+                </div>
+            </nav>
+            <main class="page catalog-page">
+                <section class="clean-block clean-catalog dark">
+                    <div class="container">
+                        <div class="block-heading">
+                            <h2 class="text-info">Catalog</h2>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="d-none d-md-block">
+                                        <div class="filters">
+                                            <div class="filter-item">
+                                                <h3>Categories</h3>
+                                                <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                        id="formCheck-1"><label class="form-check-label"
+                                                        for="formCheck-1">Phones</label></div>
+                                            </div>
+                                            <div class="filter-item">
+                                                <h3>Brands</h3>
+                                                <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                        id="formCheck-5"><label class="form-check-label"
+                                                        for="formCheck-5">Samsung</label></div>
+                                                <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                        id="formCheck-6"><label class="form-check-label"
+                                                        for="formCheck-6">Apple</label></div>
+                                                <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                        id="formCheck-7"><label class="form-check-label"
+                                                        for="formCheck-7">HTC</label></div>
+                                            </div>
+                                            <div class="filter-item">
+                                                <h3>OS</h3>
+                                                <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                        id="formCheck-8"><label class="form-check-label"
+                                                        for="formCheck-8">Android</label></div>
+                                                <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                        id="formCheck-9"><label class="form-check-label"
+                                                        for="formCheck-9">iOS</label></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-md-none"><a class="btn btn-link d-md-none filter-collapse"
+                                            data-toggle="collapse" aria-expanded="false" aria-controls="filters"
+                                            role="button" href="#filters">Filters<i
+                                                class="icon-arrow-down filter-caret"></i></a>
+                                        <div class="collapse" id="filters">
+                                            <div class="filters">
+                                                <div class="filter-item">
+                                                    <h3>Categories</h3>
+                                                    <div class="form-check"><input class="form-check-input"
+                                                            type="checkbox" id="formCheck-1"><label
+                                                            class="form-check-label" for="formCheck-1">Phones</label>
+                                                    </div>
+                                                    <div class="form-check"><input class="form-check-input"
+                                                            type="checkbox" id="formCheck-2"><label
+                                                            class="form-check-label" for="formCheck-2">Laptops</label>
+                                                    </div>
+                                                    <div class="form-check"><input class="form-check-input"
+                                                            type="checkbox" id="formCheck-3"><label
+                                                            class="form-check-label" for="formCheck-3">PC</label></div>
+                                                    <div class="form-check"><input class="form-check-input"
+                                                            type="checkbox" id="formCheck-4"><label
+                                                            class="form-check-label" for="formCheck-4">Tablets</label>
+                                                    </div>
+                                                </div>
+                                                <div class="filter-item">
+                                                    <h3>Brands</h3>
+                                                    <div class="form-check"><input class="form-check-input"
+                                                            type="checkbox" id="formCheck-5"><label
+                                                            class="form-check-label" for="formCheck-5">Samsung</label>
+                                                    </div>
+                                                    <div class="form-check"><input class="form-check-input"
+                                                            type="checkbox" id="formCheck-6"><label
+                                                            class="form-check-label" for="formCheck-6">Apple</label>
+                                                    </div>
+                                                    <div class="form-check"><input class="form-check-input"
+                                                            type="checkbox" id="formCheck-7"><label
+                                                            class="form-check-label" for="formCheck-7">HTC</label></div>
+                                                </div>
+                                                <div class="filter-item">
+                                                    <h3>OS</h3>
+                                                    <div class="form-check"><input class="form-check-input"
+                                                            type="checkbox" id="formCheck-8"><label
+                                                            class="form-check-label" for="formCheck-8">Android</label>
+                                                    </div>
+                                                    <div class="form-check"><input class="form-check-input"
+                                                            type="checkbox" id="formCheck-9"><label
+                                                            class="form-check-label" for="formCheck-9">iOS</label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="products">
+                                        <div class="row no-gutters">
+                                            <div class="col-12 col-md-6 col-lg-4">
+                                                <div class="clean-product-item">
+                                                    <div class="image"><a href="#"><img
+                                                                class="img-fluid d-block mx-auto"
+                                                                src="/folder/assets/img/tech/image2.jpg"></a></div>
+                                                    <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a>
+                                                    </div>
+                                                    <div class="about">
+                                                        <div class="rating"><img src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star-half-empty.svg"><img
+                                                                src="/folder/assets/img/star-empty.svg"></div>
+                                                        <div class="price">
+                                                            <h3>$100</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-4">
+                                                <div class="clean-product-item">
+                                                    <div class="image"><a href="#"><img
+                                                                class="img-fluid d-block mx-auto"
+                                                                src="/folder/assets/img/tech/image2.jpg"></a></div>
+                                                    <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a>
+                                                    </div>
+                                                    <div class="about">
+                                                        <div class="rating"><img src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star-half-empty.svg"><img
+                                                                src="/folder/assets/img/star-empty.svg"></div>
+                                                        <div class="price">
+                                                            <h3>$100</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-4">
+                                                <div class="clean-product-item">
+                                                    <div class="image"><a href="#"><img
+                                                                class="img-fluid d-block mx-auto"
+                                                                src="/folder/assets/img/tech/image2.jpg"></a></div>
+                                                    <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a>
+                                                    </div>
+                                                    <div class="about">
+                                                        <div class="rating"><img src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star-half-empty.svg"><img
+                                                                src="/folder/assets/img/star-empty.svg"></div>
+                                                        <div class="price">
+                                                            <h3>$100</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-4">
+                                                <div class="clean-product-item">
+                                                    <div class="image"><a href="#"><img
+                                                                class="img-fluid d-block mx-auto"
+                                                                src="/folder/assets/img/tech/image2.jpg"></a></div>
+                                                    <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a>
+                                                    </div>
+                                                    <div class="about">
+                                                        <div class="rating"><img src="/folder/assetsimg/star.svg"><img
+                                                                src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star-half-empty.svg"><img
+                                                                src="/folder/assets/img/star-empty.svg"></div>
+                                                        <div class="price">
+                                                            <h3>$100</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-4">
+                                                <div class="clean-product-item">
+                                                    <div class="image"><a href="#"><img
+                                                                class="img-fluid d-block mx-auto"
+                                                                src="/folder/assets/img/tech/image2.jpg"></a></div>
+                                                    <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a>
+                                                    </div>
+                                                    <div class="about">
+                                                        <div class="rating"><img src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star-half-empty.svg"><img
+                                                                src="/folder/assets/img/star-empty.svg"></div>
+                                                        <div class="price">
+                                                            <h3>$100</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-4">
+                                                <div class="clean-product-item">
+                                                    <div class="image"><a href="#"><img
+                                                                class="img-fluid d-block mx-auto"
+                                                                src="/folder/assets/img/tech/image2.jpg"></a></div>
+                                                    <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a>
+                                                    </div>
+                                                    <div class="about">
+                                                        <div class="rating"><img src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star-half-empty.svg"><img
+                                                                src="/folder/assets/img/star-empty.svg"></div>
+                                                        <div class="price">
+                                                            <h3>$100</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-4">
+                                                <div class="clean-product-item">
+                                                    <div class="image"><a href="#"><img
+                                                                class="img-fluid d-block mx-auto"
+                                                                src="/folder/assets/img/tech/image2.jpg"></a></div>
+                                                    <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a>
+                                                    </div>
+                                                    <div class="about">
+                                                        <div class="rating"><img src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star-half-empty.svg"><img
+                                                                src="/folder/assets/img/star-empty.svg"></div>
+                                                        <div class="price">
+                                                            <h3>$100</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-4">
+                                                <div class="clean-product-item">
+                                                    <div class="image"><a href="#"><img
+                                                                class="img-fluid d-block mx-auto"
+                                                                src="/folder/assets/img/tech/image2.jpg"></a></div>
+                                                    <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a>
+                                                    </div>
+                                                    <div class="about">
+                                                        <div class="rating"><img src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star-half-empty.svg"><img
+                                                                src="/folder/assets/img/star-empty.svg"></div>
+                                                        <div class="price">
+                                                            <h3>$100</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-4">
+                                                <div class="clean-product-item">
+                                                    <div class="image"><a href="#"><img
+                                                                class="img-fluid d-block mx-auto"
+                                                                src="/folder/assets/img/tech/image2.jpg"></a><a
+                                                            href="#"></a>
+                                                    </div>
+                                                    <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a>
+                                                    </div>
+                                                    <div class="about">
+                                                        <div class="rating"><img src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star.svg"><img
+                                                                src="/folder/assets/img/star-half-empty.svg"><img
+                                                                src="/folder/assets/img/star-empty.svg"></div>
+                                                        <div class="price">
+                                                            <h3>$100</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <nav>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <script src="/folder/assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
+            <script src="/folder/assets/bootstrap/js/bootstrap.min.js"></script>
+            <script src="/folder/assets/js/core/popper.min.js" type="text/javascript"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+            <script src="/folder/assets/js/smoothproducts.min.js"></script>
+            <script src="/folder/assets/js/theme.js"></script>
+            <script src="/folder/asset/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
+</body>
+
+</html>
