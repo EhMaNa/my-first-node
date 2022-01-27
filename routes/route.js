@@ -35,14 +35,14 @@ router.get('/login', (rq, rs) => {
 router.get('/', (rq, rs) => {
     rs.render('index');
 });
-router.get('/home/dashboard', ensureAuthenticated, (rq, rs) => {
+router.get('/home/dashboard', /*ensureAuthenticated,*/(rq, rs) => {
     rs.render('dashboard');
 });
 router.get('/home/user', (rq, rs) => {
     rs.render('user');
 });
 router.get('/home/products', (rq, rs) => {
-    rs.render('index');
+    rs.render('products');
 });
 router.get('/logout', (rq, rs) => {
     rq.logout();
