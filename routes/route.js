@@ -35,7 +35,7 @@ router.get('/login', (rq, rs) => {
 router.get('/', (rq, rs) => {
     rs.render('index');
 });
-router.get('/home/dashboard', /*ensureAuthenticated,*/(rq, rs) => {
+router.get('/home/dashboard', ensureAuthenticated, (rq, rs) => {
     rs.render('dashboard');
 });
 router.get('/home/user', (rq, rs) => {
