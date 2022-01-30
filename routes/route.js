@@ -35,14 +35,26 @@ router.get('/login', (rq, rs) => {
 router.get('/', (rq, rs) => {
     rs.render('index');
 });
-router.get('/home/dashboard', ensureAuthenticated, (rq, rs) => {
-    rs.render('dashboard');
-});
 router.get('/home/user', (rq, rs) => {
-    rs.render('user');
+    if (!rq.user) {
+        rs.redirect('/login')
+    } else {
+        rs.render('user', {
+            name: rq.user.username,
+            email: rq.user.email
+        });
+    }
 });
 router.get('/home/products', (rq, rs) => {
-    rs.render('products');
+    if (!rq.user) {
+        rs.redirect('/login')
+    } else {
+        rs.render('products');
+    }
+
+});
+router.get('/home/dashboard', ensureAuthenticated, (rq, rs) => {
+    rs.render('dashboard');
 });
 router.get('/logout', (rq, rs) => {
     rq.logout();
