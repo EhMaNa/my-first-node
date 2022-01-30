@@ -104,13 +104,14 @@
                                                 <div class="form-group">
                                                     <label>Username</label>
                                                     <input type="text" class="form-control" placeholder="Username"
-                                                        value="michael23">
+                                                        value=<%=name %>>
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Email address</label>
-                                                    <input type="email" class="form-control" placeholder="Email">
+                                                    <input type="email" class="form-control" placeholder="Email"
+                                                        value=<%=email %>>
                                                 </div>
                                             </div>
                                         </div>
@@ -163,7 +164,9 @@
                                                 alt="..." />
 
                                             <h4 class="title">Mike Andrew<br />
-                                                <small>michael24</small>
+                                                <small>
+                                                    <%=name %>
+                                                </small>
                                             </h4>
                                         </a>
                                     </div>
