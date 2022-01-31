@@ -1,4 +1,4 @@
 {
     "webToken": "",
-    "db": "mongb://localhost:27017/database"
+    "db": "mongodb://localhost:27017/database"
 }
