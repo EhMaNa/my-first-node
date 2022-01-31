@@ -11,12 +11,3 @@ require('./startup/prod')(app);
 
 const port = process.env.PORT || 3000;
 app.listen(port);
-
-
-
-//app.use(expressLayouts);
-//app.set('layout', 'layouts/layout');
-
-
-
-
