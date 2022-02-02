@@ -10,7 +10,8 @@ module.exports = function (passport) {
             try {
                 user = await User.User.findOne({ email: email });
             } catch (error) {
-                return done(null, false, { message: "Login Failed: Internal Error, Please Try Again Later" })
+                done(null, false, { message: "Login Failed: Internal Error, Please Try Again Later" })
+                throw new Error('Database Server Error');
             }
             if (!user) {
                 return done(null, false, { message: "Incorrect Email or Password" })
