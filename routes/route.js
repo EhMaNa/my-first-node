@@ -40,9 +40,9 @@ router.get('/home/user', (req, res) => {
         req.flash('error', 'Please Log In to Continue');
         res.redirect('/login');
     } else {
-        rs.render('user', {
-            name: rq.user.username,
-            email: rq.user.email
+        res.render('user', {
+            name: req.user.username,
+            email: req.user.email
         });
     }
 });
