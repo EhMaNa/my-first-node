@@ -35,7 +35,7 @@ router.get('/login', (rq, rs) => {
 router.get('/', (rq, rs) => {
     rs.render('index');
 });
-router.get('/home/user', (rq, rs) => {
+router.get('/home/user', (req, res) => {
     if (!rq.user) {
         req.flash('error', 'Please Log In to Continue');
         rs.redirect('/login');
