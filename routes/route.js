@@ -36,9 +36,9 @@ router.get('/', (rq, rs) => {
     rs.render('index');
 });
 router.get('/home/user', (req, res) => {
-    if (!rq.user) {
+    if (!req.user) {
         req.flash('error', 'Please Log In to Continue');
-        rs.redirect('/login');
+        res.redirect('/login');
     } else {
         rs.render('user', {
             name: rq.user.username,
