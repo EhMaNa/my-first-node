@@ -46,8 +46,8 @@ router.get('/home/user', (req, res) => {
         });
     }
 });
-router.get('/home/products', (rq, rs) => {
-    if (!rq.user) {
+router.get('/home/products', (req, res) => {
+    if (!req.user) {
         req.flash('error', 'Please Log In to Continue');
         rs.redirect('/login');
     } else {
