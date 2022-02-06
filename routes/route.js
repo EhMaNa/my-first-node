@@ -37,7 +37,8 @@ router.get('/', (rq, rs) => {
 });
 router.get('/home/user', (rq, rs) => {
     if (!rq.user) {
-        rs.redirect('/login')
+        req.flash('error', 'Please Log In to Continue');
+        rs.redirect('/login');
     } else {
         rs.render('user', {
             name: rq.user.username,
@@ -47,7 +48,8 @@ router.get('/home/user', (rq, rs) => {
 });
 router.get('/home/products', (rq, rs) => {
     if (!rq.user) {
-        rs.redirect('/login')
+        req.flash('error', 'Please Log In to Continue');
+        rs.redirect('/login');
     } else {
         rs.render('products');
     }
