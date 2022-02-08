@@ -33,7 +33,7 @@ router.get('/login', (req, res) => {
     res.render('log',);
 });
 router.get('/', (req, res) => {
-    rs.render('index');
+    res.render('index');
 });
 router.get('/home/user', (req, res) => {
     if (!req.user) {
@@ -55,7 +55,7 @@ router.get('/home/products', (req, res) => {
     }
 
 });
-router.get('/home/dashboard', ensureAuthenticated, (rq, rs) => {
+router.get('/home/dashboard', ensureAuthenticated, (req, rs) => {
     rs.render('dashboard');
 });
 router.get('/logout', (rq, rs) => {
