@@ -63,14 +63,6 @@ function genericFlash(value) {
     }
 
 }
-
-
-
-/*
-module.exports.conditionalFlash = conditionalFlash;
-module.exports.genericFlash = genericFlash;
-module.exports.signFlash = signFlash;*/
-
 module.exports = {
     signFlash,
     genericFlash,
