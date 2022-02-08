@@ -55,8 +55,8 @@ router.get('/home/products', (req, res) => {
     }
 
 });
-router.get('/home/dashboard', ensureAuthenticated, (req, rs) => {
-    rs.render('dashboard');
+router.get('/home/dashboard', ensureAuthenticated, (req, res) => {
+    res.render('dashboard');
 });
 router.get('/logout', (rq, rs) => {
     rq.logout();
