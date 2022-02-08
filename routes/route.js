@@ -30,9 +30,9 @@ router.get('/signup', (req, res) => {
     res.render('sign');
 });
 router.get('/login', (req, res) => {
-    rs.render('log',);
+    res.render('log',);
 });
-router.get('/', (rq, rs) => {
+router.get('/', (req, res) => {
     rs.render('index');
 });
 router.get('/home/user', (req, res) => {
