@@ -26,7 +26,7 @@ router.use(flash());
 router.use(reqFlashInit)
 
 //  GET ROUTES
-router.get('/signup', (rq, rs) => {
+router.get('/signup', (req, res) => {
     rs.render('sign');
 });
 router.get('/login', (rq, rs) => {
