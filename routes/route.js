@@ -41,7 +41,7 @@ router.get('/home/user', (req, res) => {
         res.redirect('/login');
     } else {
         res.render('user', {
-            name: req.user.username,
+            username: req.user.username,
             email: req.user.email
         });
     }
