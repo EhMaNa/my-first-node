@@ -5,7 +5,7 @@ const schema = new mongoose.Schema({
     username: {
         type: String,
         minlength: 3,
-        maxlength: 50,
+        maxlength: 20,
         required: true
     },
     email: {
@@ -18,6 +18,20 @@ const schema = new mongoose.Schema({
         type: String,
         minlength: 7,
         required: true,
+    },
+    Fname: {
+        type: String,
+        trim: true,
+        maxlength: 20
+    },
+    Lname: {
+        type: String,
+        trim: true,
+        maxlength: 20
+    },
+    Bio: {
+        type: String,
+        maxlength: 100
     }
 
 })
