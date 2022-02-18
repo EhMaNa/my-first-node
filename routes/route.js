@@ -1,4 +1,4 @@
-const User = require('../schemas/signup');
+const User = require('../schemas/user');
 const express = require('express');
 const router = express.Router();
 const debug = require('debug')('node:app');
