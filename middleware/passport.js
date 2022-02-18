@@ -1,5 +1,5 @@
 const localStrategy = require('passport-local').Strategy;
-const User = require('../schemas/signup');
+const User = require('../schemas/user');
 const bcrypt = require('bcrypt');
 
 
