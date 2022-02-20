@@ -6,7 +6,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const bcrypt = require('bcrypt');
 const joi = require('joi');
-const { signup, login } = require('../collections/rendering');
+const { signup, login, logout, dashboard } = require('../collections/rendering');
 const { genericFlash, conditionalFlash } = require('../middleware/flash-messages');
 const { signFlash } = require('../middleware/flash-messages');
 const { ensureAuthenticated } = require('../middleware/auth');
@@ -63,13 +63,8 @@ router.get('/home/products', (req, res) => {
     }
 
 });
-router.get('/home/dashboard', ensureAuthenticated, (req, res) => {
-    res.render('dashboard');
-});
-router.get('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/');
-});
+router.get('/home/dashboard', ensureAuthenticated, dashboard);
+router.get('/logout', logout);
 
 // POST ROUTES
 
@@ -107,7 +102,6 @@ router.post('/signup', async (req, res) => {
     const value = schema.validate(req.body);
     debug(value)
     if (value.error) {
-        console.log(value.error)
         reqFlash(req, conditionalFlash(value.error.message), 'errorsIntro', 'errors');
         res.status(400).redirect('/signup');
     }
