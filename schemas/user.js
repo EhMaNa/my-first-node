@@ -22,16 +22,19 @@ const schema = new mongoose.Schema({
     Fname: {
         type: String,
         trim: true,
-        maxlength: 20
+        maxlength: 20,
+        default: ''
     },
     Lname: {
         type: String,
         trim: true,
-        maxlength: 20
+        maxlength: 20,
+        default: ''
     },
     bio: {
         type: String,
-        maxlength: 100
+        maxlength: 100,
+        default: ''
     }
 
 })
