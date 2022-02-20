@@ -46,6 +46,17 @@ router.get('/home/user', (req, res) => {
         });
     }
 });
+router.post('/home/user', async (req, res) => {
+    const user = await User.User.findByIdAndUpdate(req.user.id, {
+        $set: {
+            Fname: req.body.Fname,
+            Lname: req.body.Lname,
+            bio: req.body.bio,
+        },
+    }, { new: true })
+    console.log(user);
+    res.redirect('/home/user')
+});
 router.get('/home/products', (req, res) => {
     if (!req.user) {
         req.flash('error', 'Please Log In to Continue');
