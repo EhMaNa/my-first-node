@@ -24,6 +24,10 @@ function conditionalFlash(intro) {
         return {
             intro: 'Password Too Short! ',
         }
+    if (intro === "\"username\" length must be less than or equal to 20 characters long" || "\"username\" length must be at least 3 characters long")
+        return {
+            intro: 'Username must be between 5 and 20 Characters long! ',
+        }
 }
 
 function signFlash(intro) {
