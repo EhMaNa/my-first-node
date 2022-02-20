@@ -29,7 +29,7 @@ const schema = new mongoose.Schema({
         trim: true,
         maxlength: 20
     },
-    Bio: {
+    bio: {
         type: String,
         maxlength: 100
     }
