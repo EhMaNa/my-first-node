@@ -6,6 +6,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const bcrypt = require('bcrypt');
 const joi = require('joi');
+const { signup, login } = require('../collections/rendering');
 const { genericFlash, conditionalFlash } = require('../middleware/flash-messages');
 const { signFlash } = require('../middleware/flash-messages');
 const { ensureAuthenticated } = require('../middleware/auth');
@@ -26,12 +27,8 @@ router.use(flash());
 router.use(reqFlashInit)
 
 //  GET ROUTES
-router.get('/signup', (req, res) => {
-    res.render('sign');
-});
-router.get('/login', (req, res) => {
-    res.render('log',);
-});
+router.get('/signup', signup);
+router.get('/login', login);
 router.get('/', (req, res) => {
     res.render('index');
 });
@@ -102,7 +99,7 @@ router.post('/login', async (req, res, next) => {
 // SIGN UP 
 router.post('/signup', async (req, res) => {
     const schema = joi.object().keys({
-        username: joi.string().trim().min(3).max(50).required(),
+        username: joi.string().trim().min(3).max(20).required(),
         email: joi.string().trim().email().required(),
         password: joi.string().min(7).required(),
         password_repeat: joi.string(),
@@ -110,6 +107,7 @@ router.post('/signup', async (req, res) => {
     const value = schema.validate(req.body);
     debug(value)
     if (value.error) {
+        console.log(value.error)
         reqFlash(req, conditionalFlash(value.error.message), 'errorsIntro', 'errors');
         res.status(400).redirect('/signup');
     }
