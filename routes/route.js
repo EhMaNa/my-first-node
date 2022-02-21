@@ -14,6 +14,7 @@ const passport = require('passport');
 require('../middleware/passport')(passport);
 const reqFlashInit = require('../middleware/req-flash-init');
 const reqFlash = require('../middleware/req-flash');
+const { userboardPost } = require('../collections/registration');
 
 router.use(session({
     secret: 'secret',
@@ -31,17 +32,7 @@ router.get('/signup', signup);
 router.get('/login', login);
 router.get('/', indexPage);
 router.get('/home/user', userboard);
-router.post('/home/user', async (req, res) => {
-    const user = await User.User.findByIdAndUpdate(req.user.id, {
-        $set: {
-            Fname: req.body.Fname,
-            Lname: req.body.Lname,
-            bio: req.body.bio,
-        },
-    }, { new: true })
-    console.log(user);
-    res.redirect('/home/user')
-});
+router.post('/home/user', userboardPost);
 router.get('/home/products', productsboard);
 router.get('/home/dashboard', ensureAuthenticated, dashboard);
 router.get('/logout', logout);
