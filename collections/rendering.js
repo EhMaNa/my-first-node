@@ -29,11 +29,24 @@ const productsboard = (req, res) => {
 const indexPage = (req, res) => {
     res.render('index');
 }
+
+const userboard = (req, res) => {
+    if (!req.user) {
+        req.flash('error', 'Please Log In to Continue');
+        res.redirect('/login');
+    } else {
+        res.render('user', {
+            username: req.user.username,
+            email: req.user.email
+        });
+    }
+}
 module.exports = {
     indexPage,
     signup,
     login,
     logout,
     dashboard,
+    userboard,
     productsboard,
 }
