@@ -6,7 +6,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const bcrypt = require('bcrypt');
 const joi = require('joi');
-const { signup, login, logout, dashboard, productsboard, indexPage } = require('../collections/rendering');
+const { signup, login, logout, dashboard, productsboard, indexPage, userboard } = require('../collections/rendering');
 const { genericFlash, conditionalFlash } = require('../middleware/flash-messages');
 const { signFlash } = require('../middleware/flash-messages');
 const { ensureAuthenticated } = require('../middleware/auth');
@@ -30,17 +30,7 @@ router.use(reqFlashInit)
 router.get('/signup', signup);
 router.get('/login', login);
 router.get('/', indexPage);
-router.get('/home/user', (req, res) => {
-    if (!req.user) {
-        req.flash('error', 'Please Log In to Continue');
-        res.redirect('/login');
-    } else {
-        res.render('user', {
-            username: req.user.username,
-            email: req.user.email
-        });
-    }
-});
+router.get('/home/user', userboard);
 router.post('/home/user', async (req, res) => {
     const user = await User.User.findByIdAndUpdate(req.user.id, {
         $set: {
