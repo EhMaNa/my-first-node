@@ -15,9 +15,25 @@ const logout = (req, res) => {
 const dashboard = (req, res) => {
     res.render('dashboard');
 }
+
+const productsboard = (req, res) => {
+    if (!req.user) {
+        req.flash('error', 'Please Log In to Continue');
+        res.redirect('/login');
+    } else {
+        res.render('products');
+    }
+
+}
+
+const indexPage = (req, res) => {
+    res.render('index');
+}
 module.exports = {
+    indexPage,
     signup,
     login,
     logout,
     dashboard,
+    productsboard,
 }
