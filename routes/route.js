@@ -14,7 +14,7 @@ const passport = require('passport');
 require('../middleware/passport')(passport);
 const reqFlashInit = require('../middleware/req-flash-init');
 const reqFlash = require('../middleware/req-flash');
-const { userboardPost } = require('../collections/crud');
+const { userboardPost, loginPost } = require('../collections/crud');
 
 router.use(session({
     secret: 'secret',
@@ -32,7 +32,6 @@ router.get('/signup', signup);
 router.get('/login', login);
 router.get('/', indexPage);
 router.get('/home/user', userboard);
-router.post('/home/user', userboardPost);
 router.get('/home/products', productsboard);
 router.get('/home/dashboard', ensureAuthenticated, dashboard);
 router.get('/logout', logout);
@@ -40,27 +39,8 @@ router.get('/logout', logout);
 // POST ROUTES
 
 // LOGIN
-router.post('/login', async (req, res, next) => {
-    const schema = joi.object().keys({
-        email: joi.string().trim().email().required(),
-        password: joi.string().required()
-    });
-    const value = schema.validate(req.body);
-    debug(value)
-    if (value.error) {
-        reqFlash(req, genericFlash(2), 'messageIntro', 'message');
-        res.redirect('/login')
-    } else {
-        passport.authenticate('local', {
-            successRedirect: '/home/dashboard',
-            failureRedirect: '/login',
-            failureFlash: true,
-        })(req, res, next);
-
-
-    }
-
-});
+router.post('/login', loginPost);
+router.post('/home/user', userboardPost);
 
 // SIGN UP 
 router.post('/signup', async (req, res) => {
