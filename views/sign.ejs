@@ -38,7 +38,10 @@
         </div>
         <script src="/folder/assets/js/jquery.min.js"></script>
         <script src="/folder/assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/folder/assets/js/ejs.js"></script>
+        <script> $('#check').change(function () {
+                $('#btn').prop('disabled', !this.checked);
+            }).change()
+        </script>
 </body>
 
 </html>
