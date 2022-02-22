@@ -1,4 +1,5 @@
 const User = require('../schemas/user');
+const debug = require('debug')('node:app');
 
 
 
@@ -11,7 +12,7 @@ const userboardPost = async (req, res) => {
             bio: req.body.bio,
         },
     }, { new: true })
-    console.log(user);
+    debug(user);
     res.redirect('/home/user')
 }
 
