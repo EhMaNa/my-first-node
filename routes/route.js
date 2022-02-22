@@ -14,7 +14,7 @@ const passport = require('passport');
 require('../middleware/passport')(passport);
 const reqFlashInit = require('../middleware/req-flash-init');
 const reqFlash = require('../middleware/req-flash');
-const { userboardPost } = require('../collections/registration');
+const { userboardPost } = require('../collections/crud');
 
 router.use(session({
     secret: 'secret',
