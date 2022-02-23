@@ -3,7 +3,6 @@ const router = express.Router();
 const debug = require('debug')('node:app');
 const session = require('express-session');
 const flash = require('connect-flash');
-const joi = require('joi');
 const { signup, login, logout, dashboard, productsboard, indexPage, userboard } = require('../collections/rendering');
 const { genericFlash, conditionalFlash } = require('../middleware/flash-messages');
 const { signFlash } = require('../middleware/flash-messages');
@@ -11,7 +10,6 @@ const { ensureAuthenticated } = require('../middleware/auth');
 const passport = require('passport');
 require('../middleware/passport')(passport);
 const reqFlashInit = require('../middleware/req-flash-init');
-const reqFlash = require('../middleware/req-flash');
 const { userboardPost, loginPost, signupPost } = require('../collections/crud');
 
 router.use(session({
