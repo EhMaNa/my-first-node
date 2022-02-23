@@ -85,4 +85,5 @@ const signupPost = async (req, res) => {
 module.exports = {
     userboardPost,
     loginPost,
+    signupPost
 }
