@@ -18,6 +18,7 @@ const userboardPost = async (req, res) => {
         },
     }, { new: true })
     debug(user);
+    req.flash('success', 'Profile Updated Successfully')
     res.redirect('/home/user')
 }
 
