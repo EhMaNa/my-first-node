@@ -14,15 +14,13 @@ const userboardPost = async (req, res) => {
             username: req.body.username,
             Fname: req.body.Fname,
             Lname: req.body.Lname,
-            bio: req.body.bio,
+            bio: req.body.bio === "" ? req.user.bio : req.body.bio,
         },
     }, { new: true })
     debug(user);
-    //req.flash('success', 'Profile Updated Successfully')
     setTimeout(() => {
         res.redirect('/home/user')
     }, 3000);
-    //res.redirect('/home/user')
 }
 
 const loginPost = async (req, res, next) => {
