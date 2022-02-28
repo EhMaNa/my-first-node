@@ -18,8 +18,11 @@ const userboardPost = async (req, res) => {
         },
     }, { new: true })
     debug(user);
-    req.flash('success', 'Profile Updated Successfully')
-    res.redirect('/home/user')
+    //req.flash('success', 'Profile Updated Successfully')
+    setTimeout(() => {
+        res.redirect('/home/user')
+    }, 3000);
+    //res.redirect('/home/user')
 }
 
 const loginPost = async (req, res, next) => {
