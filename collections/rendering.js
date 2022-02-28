@@ -37,7 +37,9 @@ const userboard = (req, res) => {
     } else {
         res.render('user', {
             username: req.user.username,
-            email: req.user.email
+            email: req.user.email,
+            Fname: req.user.Fname,
+
         });
     }
 }
