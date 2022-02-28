@@ -2,10 +2,10 @@ const mongo = require('mongoose');
 const winston = require('winston');
 const config = require('config');
 const debug = require('debug')('node:app');
-
+require('dotenv').config();
 
 module.exports = function () {
-    const db = config.get('db');
+    const db = config.get('db'); // process.env.MONGO_LOCAL
     mongo.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
         .then(() => {
             debug('Connected Successfully To ' + db)
