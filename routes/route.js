@@ -6,7 +6,7 @@ const { signup, login, logout, dashboard, productsboard, indexPage, userboard } 
 const { ensureAuthenticated } = require('../middleware/auth');
 const passport = require('passport');
 require('../middleware/passport')(passport);
-const reqFlashInit = require('../middleware/req-flash-init');
+const reqFlashInit = require('../flash messages/req-flash-init');
 const { userboardPost, loginPost, signupPost } = require('../collections/crud');
 
 // MIDDLEWARE FOR ROUTES
