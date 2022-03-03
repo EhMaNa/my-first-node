@@ -2,8 +2,8 @@ const User = require('../schemas/user');
 const joi = require('joi');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
-const reqFlash = require('../middleware/req-flash');
-const { genericFlash, conditionalFlash, signFlash } = require('../middleware/flash-messages');
+const reqFlash = require('../flash messages/req-flash');
+const { genericFlash, conditionalFlash, signFlash } = require('../flash messages/flash-messages');
 const debug = require('debug')('node:app');
 
 
