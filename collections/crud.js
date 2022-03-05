@@ -9,18 +9,23 @@ const debug = require('debug')('node:app');
 
 
 const userboardPost = async (req, res) => {
-    const user = await User.User.findByIdAndUpdate(req.user.id, {
-        $set: {
-            username: req.body.username,
-            Fname: req.body.Fname,
-            Lname: req.body.Lname,
-            bio: req.body.bio === "" ? req.user.bio : req.body.bio,
-        },
-    }, { new: true })
-    debug(user);
-    setTimeout(() => {
-        res.redirect('/home/user')
-    }, 3000);
+    try {
+        const user = await User.User.findByIdAndUpdate(req.user.id, {
+            $set: {
+                username: req.body.username,
+                Fname: req.body.Fname,
+                Lname: req.body.Lname,
+                bio: req.body.bio === "" ? req.user.bio : req.body.bio,
+            },
+        }, { new: true })
+        debug(user);
+        setTimeout(() => {
+            res.redirect('/home/user')
+        }, 3000);
+
+    } catch (error) {
+        throw new Error('Database Server Error');
+    }
 }
 
 const loginPost = async (req, res, next) => {
