@@ -1,6 +1,5 @@
 const mongo = require('mongoose');
 const winston = require('winston');
-const config = require('config');
 const debug = require('debug')('node:app');
 require('dotenv').config();
 
