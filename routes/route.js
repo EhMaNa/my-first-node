@@ -13,8 +13,12 @@ const { userboardPost, loginPost, signupPost } = require('../collections/crud');
 // MIDDLEWARE FOR ROUTES
 router.use(session({
     secret: 'secret',
-    cookie: { secure: true, maxAge: 60000 },
-    store: mongoStore.create(options),
+    //cookie: { secure: true, maxAge: 60000 },
+    store: mongoStore.create({
+        mongoUrl: 'mongodb://localhost/test-app',
+        autoRemove: 'interval',
+        autoRemoveInterval: 10 // In minutes. Default
+    }),
     resave: true,
     saveUninitialized: true,
 }));
