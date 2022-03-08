@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const session = require('express-session');
+const mongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const { signup, login, logout, dashboard, productsboard, indexPage, userboard } = require('../collections/rendering');
 const { ensureAuthenticated } = require('../middleware/auth');
@@ -12,7 +13,8 @@ const { userboardPost, loginPost, signupPost } = require('../collections/crud');
 // MIDDLEWARE FOR ROUTES
 router.use(session({
     secret: 'secret',
-    cookie: { maxAge: null },
+    cookie: { secure: true, maxAge: 60000 },
+    store: mongoStore.create(options),
     resave: true,
     saveUninitialized: true,
 }));
