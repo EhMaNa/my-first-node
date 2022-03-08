@@ -15,9 +15,9 @@ router.use(session({
     secret: 'secret',
     //cookie: { secure: true, maxAge: 60000 },
     store: mongoStore.create({
-        mongoUrl: 'mongodb://localhost/test-app',
+        mongoUrl: 'mongodb://localhost:27017/session-store',
         autoRemove: 'interval',
-        autoRemoveInterval: 10 // In minutes. Default
+        autoRemoveInterval: 1440 // 
     }),
     resave: true,
     saveUninitialized: true,
