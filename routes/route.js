@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const session = require('express-session');
 const mongoStore = require('connect-mongo');
+require('dotenv').config();
 const flash = require('connect-flash');
 const { signup, login, logout, dashboard, productsboard, indexPage, userboard } = require('../collections/rendering');
 const { ensureAuthenticated } = require('../middleware/auth');
