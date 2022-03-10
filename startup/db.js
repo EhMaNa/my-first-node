@@ -4,7 +4,7 @@ const debug = require('debug')('node:app');
 require('dotenv').config();
 
 module.exports = function () {
-    const db = process.env.MONGO_LOCAL
+    const db = process.env.MONGO_URI
     mongo.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
         .then(() => {
             debug('Connected Successfully To ' + db)
