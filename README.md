@@ -2,4 +2,4 @@
 Node Js Application
 
 ## Usage
-run npm install
+$ run npm install
