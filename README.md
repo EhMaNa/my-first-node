@@ -1,5 +1,5 @@
 # my-first-node
 Node Js Application
 
-## Getting Started
+## Usage
 run npm install
