@@ -2,4 +2,6 @@
 Node Js Application
 
 ## Usage
+```sh
 $ run npm install
+```
