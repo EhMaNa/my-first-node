@@ -35,8 +35,7 @@ const schema = new mongoose.Schema({
         maxlength: 100,
         default: ''
     }
-
-})
+});
 
 const User = mongoose.model('User', schema);
 exports.User = User;
