@@ -5,3 +5,9 @@ Node Js Application
 ```sh
 $ run npm install
 ```
+```sh
+$ npm start
+# Or run with Nodemons
+
+# Visit http://localhost:5000
+```
