@@ -7,7 +7,6 @@ const { genericFlash, conditionalFlash, signFlash } = require('../flash-messages
 const debug = require('debug')('node:app');
 
 
-
 const userboardPost = async (req, res) => {
     try {
         const user = await User.User.findByIdAndUpdate(req.user.id, {
@@ -44,8 +43,6 @@ const loginPost = async (req, res, next) => {
             failureRedirect: '/login',
             failureFlash: true,
         })(req, res, next);
-
-
     }
 
 }
