@@ -1,7 +1,6 @@
 const express = require('express');
 const error = require('../middleware/error-handling')
 
-
 module.exports = function (app) {
     app.set('view engine', 'ejs');
     app.use('/folder', express.static('folder'));
