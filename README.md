@@ -9,6 +9,5 @@ $ run npm install
 $ run npm start
 # Or Install and run with Nodemon
 
-
-# Visit http://localhost:5000
+# Then Visit http://localhost:3000
 ```
