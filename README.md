@@ -7,8 +7,8 @@ $ run npm install
 ```
 ```sh
 $ run npm start
-# Or Install Nodemon
-# And run with Nodemon
+# Or Install and run with Nodemon
+
 
 # Visit http://localhost:5000
 ```
