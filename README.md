@@ -12,4 +12,4 @@ $ run npm start
 # Then Visit http://localhost:3000
 ```
 ### MongoDB
-Open "config/keys.js" and add your MongoDB URI, local or Atlas
+Create "config/keys.js" and add your MongoDB URI, local or Atlas
