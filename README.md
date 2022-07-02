@@ -1,5 +1,5 @@
 # my-first-node
-Node Js Application
+A Node Js Application
 
 ## Usage
 ```sh
