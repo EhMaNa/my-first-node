@@ -1,5 +1,5 @@
 # my-first-node
-A Node Js Application
+A Server Side Rendering Node Js Application
 
 ## Usage
 ```sh
