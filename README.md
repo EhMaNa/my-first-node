@@ -11,8 +11,8 @@ $ run npm start
 
 # Then Visit http://localhost:3000
 ```
-### MongoDB
+## MongoDB
 Create a ".env" file and add your MongoDB URI, local or Atlas
 
 ## Apllication
-You can find the  [Application](https://ehmana.github.io/Ehmana%20Workshop.html) here
+You can also find the  [Application](https://ehmana.github.io/Ehmana%20Workshop.html) here
