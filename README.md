@@ -14,5 +14,5 @@ $ run npm start
 ## MongoDB
 Create a ".env" file and add your MongoDB URI, local or Atlas
 
-## Apllication
+## Application
 You can also find the  [Application](https://ehmana-node.onrender.com) here
